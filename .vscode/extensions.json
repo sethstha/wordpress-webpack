@@ -1,0 +1,11 @@
+{
+	"recommendations": [
+		"felixfbecker.php-intellisense",
+		"felixfbecker.php-debug",
+		"anthonydiametrix.acf-snippet",
+		"wordpresstoolbox.wordpress-toolbox",
+		"dbaeumer.vscode-eslint",
+		"ikappas.phpcs",
+		"esbenp.prettier-vscode"
+	]
+}
