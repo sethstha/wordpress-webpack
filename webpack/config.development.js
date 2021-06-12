@@ -3,6 +3,9 @@ const baseConfig = require( './config.base' );
 const WebpackBar = require( 'webpackbar' );
 const EslintPlugin = require( 'eslint-webpack-plugin' );
 const MiniCSSExtractPlugin = require( 'mini-css-extract-plugin' );
+const MiniCssExtractPlugin = require( 'mini-css-extract-plugin' );
+const BrowserSyncPlugin = require( 'browser-sync-webpack-plugin' );
+
 const config = {
 	entry: baseConfig.paths.entry,
 
@@ -44,6 +47,20 @@ const config = {
 		new EslintPlugin( {
 			extensions: [ 'js', 'jsx', 'ts', 'tsx' ],
 		} ),
+		new MiniCssExtractPlugin( {
+			filename: '[name].css',
+		} ),
+		new BrowserSyncPlugin(
+			{
+				host: 'localhost',
+				port: 3000,
+				files: [ './template-parts/**.php' ],
+				proxy: 'http://localhost/masteriyo',
+			},
+			{
+				reload: true,
+			}
+		),
 	].filter( Boolean ),
 
 	resolve: baseConfig.resolver,
